@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(0,0,0);
+    color: white;
+    background-image: url(Medias/download\ \(1\).jpeg);
+    font-size: 25px;
+    font-family: League Gothic, Impact, sans-serif;
+    animation: colorChange 5s infinite; 
+}
+
+@keyframes colorChange {
+    0% { color: red; }
+    10% { color: blue; } 
+    20% { color: green; } 
+    30% { color: yellow; } 
+    40% { color: orange; } 
+    50% { color: darkmagenta;}
+    60% { color: gold;} 
+    70% { color: mediumspringgreen;}
+    80% { color: seagreen;}
+    90% { color: chocolate;}
+    100% { color: firebrick;}
+}
+img{
+    width: 50%;
+    position: relative;
+}
+img.yoyo {
+    animation: yoyo alternate infinite 2s;
+}
+
+@keyframes yoyo {
+    from {
+        left: 100%;
+        transform: rotate(360deg);
+    }
+    to {
+        left: 0;
+        transform: rotate(0deg);
+    }
+}
+
+img {
+    width: 320px;
+    max-width: 320px;
+}
+
+article {
+    background-image: url(Medias/jumpscare.gif);
+    background-size: 1400px;
+    padding: 20px;
+}
+
+
+
+ 
