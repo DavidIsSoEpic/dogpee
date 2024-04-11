@@ -1,0 +1,46 @@
+body {
+    background-color: rgb(0,0,0);
+    color: white;
+    background-image: url(Medias/o84rLA.gif);
+    font-size: 25px;
+    font-family: League Gothic, Impact, sans-serif;
+    animation: colorChange 5s infinite; 
+}
+
+@keyframes colorChange {
+    0% { color: red; }
+    10% { color: blue; } 
+    20% { color: green; } 
+    30% { color: yellow; } 
+    40% { color: orange; } 
+    50% { color: darkmagenta;}
+    60% { color: gold;} 
+    70% { color: mediumspringgreen;}
+    80% { color: seagreen;}
+    90% { color: chocolate;}
+    100% { color: firebrick;}
+}
+img{
+    width: 80%;
+    position: relative;
+}
+
+img {
+    width: 320px;
+    max-width: 320px;
+}
+
+article {
+    background-color: darkred;
+    opacity: 80%;
+    background-size: 1400px;
+    padding: 50px;
+    margin: 50px;
+}
+mark {
+    background-color: yellow;
+    color: rgb(255, 0, 0);
+  }
+header {
+    font-size: 40px;
+}
