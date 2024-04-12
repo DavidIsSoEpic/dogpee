@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Pee Simulator</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('media/360_F_317610235_VOxsIfYiNChJNo2GelwXJWlCI0So7rXS.jpg'); /* Set your background image URL here */
+            background-size: cover;
+            background-position: center;
+        }
+
+        #image {
+            position: absolute;
+            width: 200px; /* Adjust width as needed */
+            height: 200px; /* Adjust height as needed */
+            background-size: cover;
+            background-position: center;
+            pointer-events: none; /* Prevent image from blocking mouse events */
+        }
+
+        .pee {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: yellow;
+            border-radius: 50%;
+            z-index: 1; /* Ensure pee appears above the background */
+            display: none; /* Initially hide pee */
+        }
+
+        #pee-counter {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="image" src="media/Labrador_stock1.png" alt="cursor-image">
+    </div>
+    <div id="pee-counter">Pee Produced: <span id="pee-count">0</span></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const image = document.getElementById('image');
+            const offsetX = image.offsetWidth / 2;
+            const offsetY = image.offsetHeight / 2;
+            const peeCounter = document.getElementById('pee-count');
+
+            let pees = []; // Array to store pee elements
+            let peeCount = 0; // Counter for pee produced
+
+            document.addEventListener('mousemove', function(event) {
+                // Update image position to follow mouse cursor
+                image.style.left = (event.clientX - offsetX) + 'px';
+                image.style.top = (event.clientY - offsetY) + 'px';
+            });
+
+            let peeing = false;
+            document.addEventListener('mousedown', function(event) {
+                if (event.button === 0) { // Check if left mouse button is pressed
+                    peeing = true;
+                }
+            });
+
+            document.addEventListener('mouseup', function(event) {
+                if (event.button === 0) { // Check if left mouse button is released
+                    peeing = false;
+                }
+            });
+
+            document.addEventListener('mousemove', function(event) {
+                if (peeing) {
+                    spawnPee(event.clientX, event.clientY); // Spawn pee when holding left mouse button
+                }
+            });
+
+            function spawnPee(x, y) {
+                const pee = document.createElement('div'); // Create a new pee element
+                pee.className = 'pee'; // Set class name
+                pee.style.left = (x - 10) + 'px'; // Adjust pee position
+                pee.style.top = (y - 50) + 'px'; // Adjust pee position
+                document.getElementById('container').appendChild(pee); // Append pee to container
+                pees.push(pee); // Add pee to the array
+                pee.style.display = 'block'; // Show pee
+                peeCount++; // Increment pee count
+                peeCounter.textContent = peeCount; // Update pee count in the counter
+                animatePee(pee); // Start animation for this pee
+            }
+
+            function animatePee(pee) {
+                let peeY = parseInt(pee.style.top); // Get current pee Y position
+                const peeAnimation = setInterval(function() {
+                    if (peeY < window.innerHeight) { // If pee hasn't reached bottom of the screen
+                        peeY += 4; // Update pee position (falling speed)
+                        pee.style.top = peeY + 'px';
+                    } else {
+                        pee.remove(); // Remove pee from DOM
+                        clearInterval(peeAnimation); // Stop the animation
+                    }
+                }, 10);
+            }
+        });
+    </script>
+</body>
+</html>
