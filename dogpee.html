@@ -48,6 +48,18 @@
             border-radius: 5px;
             font-size: 16px;
         }
+
+        #go-back {
+            position: fixed;
+            top: 60px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none; /* Remove default underline */
+            color: black; /* Set text color */
+        }
     </style>
 </head>
 <body>
@@ -55,7 +67,7 @@
         <img id="image" src="Medias/Labrador_stock1.png" alt="cursor-image">
     </div>
     <div id="pee-counter">Pee Produced: <span id="pee-count">0</span></div>
-    <a href="index.html" id="go-back">Go Back</a>
+    <a href="https://dogpee.netlify.app" id="go-back">Go Back</a>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const image = document.getElementById('image');
