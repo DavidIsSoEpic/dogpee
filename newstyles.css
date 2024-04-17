@@ -48,6 +48,5 @@ img.logo {
     position: fixed;
     top: 20px; /* Adjust as needed */
     right: 20px; /* Adjust as needed */
-    width: 200px;
-    height: 110px;
+    size: 50%;
 }
