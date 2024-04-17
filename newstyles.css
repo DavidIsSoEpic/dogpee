@@ -44,3 +44,10 @@ mark {
 header {
     font-size: 40px;
 }
+img.logo {
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    right: 20px; /* Adjust as needed */
+    width: 100px;
+    height: 100px;
+}
