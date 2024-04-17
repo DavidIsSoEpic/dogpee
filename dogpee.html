@@ -15,7 +15,7 @@
             position: relative;
             width: 100vw;
             height: 100vh;
-            background-image: url('your-background-image.jpg'); /* Set your background image URL here */
+            background-image: url('Medias/360_F_317610235_VOxsIfYiNChJNo2GelwXJWlCI0So7rXS.jpg'); /* Set your background image URL here */
             background-size: cover;
             background-position: center;
         }
@@ -35,7 +35,7 @@
             height: 20px;
             background-color: yellow;
             border-radius: 50%;
-            z-index: 1; /* Ensure pee appears above the background */
+            z-index: 2; /* Ensure pee appears above the background */
             display: none; /* Initially hide pee */
         }
 
@@ -59,57 +59,16 @@
             font-size: 16px;
             text-decoration: none; /* Remove default underline */
             color: black; /* Set text color */
-            z-index: 2; /* Ensure button appears above the background */
-        }
-
-        #scoreboard {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 16px;
-            z-index: 2; /* Ensure scoreboard appears above the background */
         }
     </style>
 </head>
 <body>
     <div id="container">
-        <img id="image" src="media/Labrador_stock1.png" alt="cursor-image">
+        <img id="image" src="Medias/Labrador_stock1.png" alt="cursor-image">
     </div>
     <div id="pee-counter">Pee Produced: <span id="pee-count">0</span></div>
-    <a href="https://example.com" id="go-back">Go Back</a>
-    <div id="scoreboard">
-        <h2>Top 10 Pee Producers</h2>
-        <ol id="top-scores">
-            <!-- List of top scores will be dynamically generated here -->
-        </ol>
-    </div>
+    <a href="index.html" id="go-back">Go Back</a>
     <script>
-        // Function to update the scoreboard
-        function updateScoreboard(scores) {
-            const topScoresList = document.getElementById('top-scores');
-            // Clear existing scores
-            topScoresList.innerHTML = '';
-            // Sort scores in descending order
-            scores.sort((a, b) => b.count - a.count);
-            // Display top 10 scores
-            for (let i = 0; i < Math.min(scores.length, 10); i++) {
-                const listItem = document.createElement('li');
-                listItem.textContent = `${scores[i].name}: ${scores[i].count}`;
-                topScoresList.appendChild(listItem);
-            }
-        }
-
-        // Function to initialize scoreboard data
-        function initializeScoreboard() {
-            // Initialize scoreboard if not already initialized
-            if (!localStorage.getItem('peeScores')) {
-                localStorage.setItem('peeScores', JSON.stringify([]));
-            }
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             const image = document.getElementById('image');
             const offsetX = image.offsetWidth / 2;
@@ -118,15 +77,6 @@
 
             let pees = []; // Array to store pee elements
             let peeCount = 0; // Counter for pee produced
-
-            // Initialize scoreboard data
-            initializeScoreboard();
-
-            // Retrieve existing scoreboard data
-            const peeScores = JSON.parse(localStorage.getItem('peeScores'));
-
-            // Update scoreboard initially
-            updateScoreboard(peeScores);
 
             document.addEventListener('mousemove', function(event) {
                 // Update image position to follow mouse cursor
@@ -164,18 +114,13 @@
                 peeCount++; // Increment pee count
                 peeCounter.textContent = peeCount; // Update pee count in the counter
                 animatePee(pee); // Start animation for this pee
-
-                // Update scoreboard data
-                peeScores.push({ name: 'Player', count: peeCount });
-                localStorage.setItem('peeScores', JSON.stringify(peeScores));
-                updateScoreboard(peeScores);
             }
 
             function animatePee(pee) {
                 let peeY = parseInt(pee.style.top); // Get current pee Y position
                 const peeAnimation = setInterval(function() {
                     if (peeY < window.innerHeight) { // If pee hasn't reached bottom of the screen
-                        peeY += 2; // Update pee position (falling speed)
+                        peeY += 4; // Update pee position (falling speed)
                         pee.style.top = peeY + 'px';
                     } else {
                         pee.remove(); // Remove pee from DOM
