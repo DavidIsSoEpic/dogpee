@@ -50,6 +50,12 @@ article {
     padding: 20px;
 }
 
+img.logo {
+    position: fixed;
+    top: 5px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    size: 65%;
+}
 
 
  
