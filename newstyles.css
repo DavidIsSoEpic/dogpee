@@ -47,6 +47,6 @@ header {
 img.logo {
     position: fixed;
     top: 10px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
-    size: 75%;
+    right: 10px; /* Adjust as needed */
+    size: 65%;
 }
