@@ -53,7 +53,7 @@ article {
 img.logo {
     position: fixed;
     top: 5px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
+    right: 5px; /* Adjust as needed */
     size: 65%;
     z-index: 999;
 }
