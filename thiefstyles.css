@@ -1,0 +1,16 @@
+main{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+div{
+  background-color: blue;
+  height: calc(100vh/4 - 12px) ;
+}
+
+.rounded{
+  border-radius: 100%;
+  background-color: black;
+  
+}
