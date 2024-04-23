@@ -69,7 +69,3 @@ img.logo {
     text-decoration: none;
     border-radius: 5px;
 }
-
-.header-button:hover {
-    background-color: #555; /* Adjust hover background color as needed */
-}
