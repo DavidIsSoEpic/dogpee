@@ -66,5 +66,5 @@ img.logo {
     padding: 10px 20px; /* Adjust padding as needed */
     border-radius: 5px;
     font-size: 40px !important;
-    color: yellow;
+    background-color: yellow;
 }
