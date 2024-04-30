@@ -1,44 +1,125 @@
-
+<!DOCTYPE html>
 <html>
-    
-    <head>
-        <title>Twinkley Dinkley</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>   
+<head>
+    <title>Twinkley Dinkley</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .searchInput {
+            width: 300px; /* Adjust the width as needed */
+            height: 40px; /* Adjust the height as needed */
+            font-size: 16px; /* Adjust the font size as needed */
+            /* Add any other styles you want */
+        }
+
+        #videoList {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .video {
+            width: calc(50% - 20px); /* Adjust width as needed */
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>   
         <h1>FREDDYFLIX</h1>
-        <h2><a href="index.html"> GO BACK</a></h2>
+        <h2><a href="index.html">GO BACK</a></h2>
         <h2>WATCH HIGH QUALITY VIDEOS FOR FREE!!!</h2>
         <img class="logo" src="Medias/logo.png" alt="logo">
-        </header> 
-        <main>
-            <section>
-                <article>
-                    <h2>SHIMMY SHIMMY YA</h2>
-                    <video width="640" height="480" controls>
-                        <source src="Medias/shimmy shimmy ay shimmy ay shimmy ya.mp4" type="video/mp4">
-                        <source src="Medias/shimmy shimmy ay shimmy ay shimmy ya.mp4" type="video/ogg">
-                      Your browser does not support the video tag.
-                      </video>
-                </article>
-                <article>
-                    <h2>cat</h2>
-                    <video width="640" height="480" controls>
-                        <source src="Medias/he.mp4" type="video/mp4">
-                        <source src="Medias/he.mp4" type="video/ogg">
-                      Your browser does not support the video tag.
-                      </video>
-                </article>
-                <article>
-                    <h2>TRAVIS SCOTT</h2>
-                    <video width="640" height="480" controls>
-                        <source src="Medias/videoplayback.mp4" type="video/mp4">
-                        <source src="Medias/videoplayback.mp4" type="video/ogg">
-                      Your browser does not support the video tag.
-                      </video>
-                </article>
-            </section>
-        </main>
-    </body>
+        <input type="text" id="searchInput" class="searchInput" placeholder="Search videos...">
+    </header> 
+    <main>
+        <section id="videoList">
+            <article class="video">
+                <h2>SHIMMY SHIMMY YA</h2>
+                <video width="320" height="240" controls>
+                    <source src="Medias/shimmy shimmy ay shimmy ay shimmy ya.mp4" type="video/mp4">
+                    <source src="Medias/shimmy shimmy ay shimmy ay shimmy ya.mp4" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </article>
+            <article class="video">
+                <h2>cat</h2>
+                <video width="320" height="240" controls>
+                    <source src="Medias/he.mp4" type="video/mp4">
+                    <source src="Medias/he.mp4" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </article>
+            <article class="video">
+                <h2>TRAVIS SCOTT</h2>
+                <video width="320" height="240" controls>
+                    <source src="Medias/videoplayback.mp4" type="video/mp4">
+                    <source src="Medias/videoplayback.mp4" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </article>
+            <article class="video">
+                <h2>SPRITE</h2>
+                <video width="320" height="240" controls>
+                    <source src="Medias/Sprite Cranberry (4K).mp4" type="video/mp4">
+                    <source src="Medias/Sprite Cranberry (4K).mp4" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </article>
+            <article class="video">
+                <h2>france</h2>
+                <video width="320" height="240" controls>
+                    <source src="Medias/videoplayback copy.mp4" type="video/mp4">
+                    <source src="Medias/videoplayback copy.mp4" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </article>
+            <article class="video">
+                <h2>spongeBOB</h2>
+                <video width="320" height="240" controls>
+                    <source src="Medias/S̷̀P̸̏Ò̵N̶̿G̵̐E̵̅B̸̽O̷͝B S̵̛Q̷̀U̷̚Ä̸R̵̅È̶P̸̈́A̴͠N̴͊T̷͝S T̷͗O̶̔O̶̐T̷̑H̴̏P̸̀A̸͂S̸̓Ṫ̷E̴.mp4" type="video/mp4">
+                    <source src="Medias/S̷̀P̸̏Ò̵N̶̿G̵̐E̵̅B̸̽O̷͝B S̵̛Q̷̀U̷̚Ä̸R̵̅È̶P̸̈́A̴͠N̴͊T̷͝S T̷͗O̶̔O̶̐T̷̑H̴̏P̸̀A̸͂S̸̓Ṫ̷E̴.mp4" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </article>
+            <article class="video">
+                <h2>TYDUS FIRE SONG!!!</h2>
+                <video width="320" height="240" controls>
+                    <source src="Medias/TYDUS - First Girlfriend (Official Music Video).mp4" type="video/mp4">
+                    <source src="Medias/TYDUS - First Girlfriend (Official Music Video).mp4" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+            </article>
+            <article class="video">
+                <h2>call me on my pizza</h2>
+                <video width="320" height="240" controls>
+                    <source src="Medias/you used to call me on my pizza.mp4" type="video/mp4">
+                    <source src="Medias/you used to call me on my pizza.mp4" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <h2>my pizza number is 172 636 614 please call me</h2>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("searchInput").addEventListener("input", function() {
+            var filter = this.value.trim().toUpperCase();
+            var articles = document.querySelectorAll("article");
+            articles.forEach(function(article) {
+                var title = article.querySelector("h2").textContent.trim().toUpperCase();
+                if (title.includes(filter)) {
+                    article.style.display = "";
+                } else {
+                    article.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
 </html>
