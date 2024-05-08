@@ -1,0 +1,33 @@
+body {
+    background-image: url(Media/Skar-King.png);
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+img#cookieButton {
+    cursor: pointer;
+    width: 400px; /* Adjust size as needed */
+    height: 400px; /* Adjust size as needed */
+    margin-top: 20px;
+}
+
+.upgrade-buttons {
+    margin-top: 20px;
+}
+
+.upgradeButton {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.cookie-header {
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 10px 20px; /* Adjust padding as needed */
+    display: inline-block; /* Ensure the background spans the width of the text */
+}
