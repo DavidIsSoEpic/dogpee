@@ -2,7 +2,7 @@ let cookies = 0;
 let upgrades = [
     { name: 'Another Aviad (Ew)', cps: 1, cost: 10 },
     { name: 'Aviads Uncle', cps: 2, cost: 20 },
-    { name: 'Aviads left toe 3', cps: 2, cost: 30 },
+    { name: 'Aviads left toe', cps: 2, cost: 30 },
     { name: 'ANOTHER AVIAD???', cps: 3, cost: 40 }
 ];
 let cookiesPerSecond = 0;
