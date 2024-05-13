@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browser Messaging App</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .message-box {
+        height: 300px;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .input-group {
+        display: flex;
+        margin-bottom: 10px;
+    }
+    .input-group input[type="text"] {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px 0 0 5px;
+    }
+    .input-group button {
+        padding: 10px 15px;
+        border: 1px solid #007bff;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+    .message.sent {
+        text-align: right;
+    }
+    .message.received {
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1 style="text-align: center;">Pizza Network</h1>
+    <div class="input-group">
+        <input type="text" id="nameInput" placeholder="Enter your custom name...">
+        <button onclick="setCustomName()">Set Name</button>
+    </div>
+    <div class="message-box" id="messageBox"></div>
+    <div class="input-group">
+        <input type="text" id="messageInput" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    var socket = new WebSocket("ws://localhost:3000");
+    var customName = "Me"; // Default custom name
+
+    // Function to set custom name
+    function setCustomName() {
+        var nameInput = document.getElementById("nameInput");
+        var name = nameInput.value.trim();
+        if (name !== "") {
+            customName = name;
+            nameInput.value = "";
+        }
+    }
+
+    // Function to send a message
+    function sendMessage() {
+        var messageInput = document.getElementById("messageInput");
+        var message = messageInput.value.trim();
+        if (message !== "") {
+            // Send message and custom name to server
+            var data = {
+                sender: customName,
+                message: message
+            };
+            socket.send(JSON.stringify(data));
+            // Clear message input
+            messageInput.value = "";
+        }
+    }
+
+    // Function to append a message to the message box
+    function appendMessage(sender, message) {
+        var messageBox = document.getElementById("messageBox");
+        var messageElement = document.createElement("div");
+        messageElement.innerHTML = "<strong>" + sender + ":</strong> " + message;
+        messageElement.classList.add("message");
+        if (sender === customName) {
+            messageElement.classList.add("sent");
+        } else {
+            messageElement.classList.add("received");
+        }
+        messageBox.appendChild(messageElement);
+    }
+
+    // Handle incoming messages
+    socket.onmessage = function(event) {
+        var data = JSON.parse(event.data);
+        var sender = data.sender;
+        var message = data.message;
+        appendMessage(sender, message);
+        // Scroll to the bottom of the message box
+        var messageBox = document.getElementById("messageBox");
+        messageBox.scrollTop = messageBox.scrollHeight;
+    };
+</script>
+</body>
+</html>
