@@ -11,24 +11,21 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        background-image: url('Medias/360_F_275924184_GP4ACV80EK8NokxlFaUB2qykpXKrroqx.jpg');
+        background-image: url('');
     }
     .container {
         max-width: 600px;
         margin: 20px auto;
         padding: 20px;
-        border: 1px solid #000; /* Set border color to black */
+        border: 1px solid #ccc;
         border-radius: 5px;
-        background-color: black; /* Set background color to black */
     }
     .message-box {
         height: 300px;
         overflow-y: scroll;
-        border: 1px solid #000; /* Set border color to black */
+        border: 1px solid #ccc;
         padding: 10px;
         margin-bottom: 10px;
-        background-color: black; /* Set background color to black */
-        color: white; /* Set text color to white */
     }
     .input-group {
         display: flex;
@@ -37,10 +34,8 @@
     .input-group input[type="text"] {
         flex: 1;
         padding: 10px;
-        border: 1px solid #000; /* Set border color to black */
+        border: 1px solid #ccc;
         border-radius: 5px 0 0 5px;
-        background-color: black; /* Set background color to black */
-        color: white; /* Set text color to white */
     }
     .input-group button {
         padding: 10px 15px;
@@ -56,21 +51,11 @@
     .message.received {
         text-align: left;
     }
-    .pizza-network {
-        text-align: center;
-        background: linear-gradient(to right, yellow 50%, red 50%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 10px; /* Add margin to separate from message box */
-        padding: 10px; /* Add padding to create a box */
-        border: 1px solid #000; /* Set border color to black */
-        border-radius: 5px;
-    }
 </style>
 </head>
 <body>
 <div class="container">
-    <h1 class="pizza-network">Pizza Network</h1>
+    <h1 style="text-align: center;">Pizza Network</h1>
     <div class="input-group">
         <input type="text" id="nameInput" placeholder="Enter your custom name...">
         <button onclick="setCustomName()">Set Name</button>
