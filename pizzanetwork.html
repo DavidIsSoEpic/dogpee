@@ -26,6 +26,8 @@
         border: 1px solid #ccc;
         padding: 10px;
         margin-bottom: 10px;
+        background-color: black; /* Change background color to black */
+        color: white; /* Change text color to white */
     }
     .input-group {
         display: flex;
@@ -51,11 +53,17 @@
     .message.received {
         text-align: left;
     }
+    .pizza-network {
+        text-align: center;
+        background: linear-gradient(to right, yellow 50%, red 50%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 </style>
 </head>
 <body>
 <div class="container">
-    <h1 style="text-align: center;">Pizza Network</h1>
+    <h1 class="pizza-network">Pizza Network</h1>
     <div class="input-group">
         <input type="text" id="nameInput" placeholder="Enter your custom name...">
         <button onclick="setCustomName()">Set Name</button>
