@@ -14,7 +14,7 @@ let player = {
   movingRight: false
 
 };
-player.image.src = 'media/the_fog....png'; // Replace with the path to your player image
+player.image.src = 'Medias/the_fog....png'; // Replace with the path to your player image
 
 let fogs = [];
 let score = 0;
@@ -24,7 +24,7 @@ let fogInterval;
 document.getElementById('score').innerText = `Score: ${score}`;
 
 function createFog() {
-  let fogImages = ['media/fog1.png', 'media/fog2.png', 'media/fog3.png'];
+  let fogImages = ['Medias/fog1.png', 'Medias/fog2.png', 'Medias/fog3.png'];
   let fogImageIndex = Math.floor(Math.random() * fogImages.length);
   
   let fog = {
