@@ -4,7 +4,8 @@ body {
     background-image: url(Medias/download\ \(1\).jpeg);
     font-size: 25px;
     font-family: League Gothic, Impact, sans-serif;
-    animation: colorChange 5s infinite; 
+    animation: colorChange 5s infinite;
+    cursor: url('Medias/Screenshot 2024-01-30 at 16.14.44.png'), auto;}
 }
 
 @keyframes colorChange {
