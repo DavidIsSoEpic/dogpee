@@ -1,6 +1,6 @@
 let cookies = 0;
 let upgrades = [
-    { name: 'Another Aviad (Ew)', cps: 1, cost: 10 },
+    { name: 'Another Aviad', cps: 1, cost: 10 },
     { name: 'Aviads Uncle', cps: 2, cost: 20 },
     { name: 'Aviads left toe', cps: 2, cost: 30 },
     { name: 'ANOTHER AVIAD???', cps: 3, cost: 40 }
@@ -30,7 +30,7 @@ upgradeButtons.forEach((button, index) => {
             cookiesPerSecond += affordableUpgrade.cps;
             startCookieProduction();
         } else {
-            alert("You don't have enough cookies to buy this upgrade!");
+            alert("You don't have enough Aviad's to buy this upgrade!");
         }
     });
 });
@@ -42,7 +42,7 @@ prestigeButton.addEventListener('click', () => {
         prestigeMultiplier *= 2; // Increase prestige multiplier
         alert("Congratulations! You've Prestiged!");
     } else {
-        alert("You don't have enough cookies to prestige!");
+        alert("You don't have enough Aviad's to prestige!");
     }
 });
 
