@@ -48,7 +48,7 @@ function updateStage() {
         bar.style.animationDuration = '0.8s';
     } else if (sleepiness >= 13) {
         //image.src = 'deep_sleep.jpg';
-        alert('Congratulations! You won!');
+        alert('Congratulations! You got Noah to sleep!');
         let restart = confirm('Do you want to restart?');
         if (restart) {
             sleepiness = 0;
