@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Conversion Toolkit</title>
+    <link rel="stylesheet" href="toolstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Unit Conversion Toolkit</h1>
+        <form id="conversion-form">
+            <label for="value">Value:</label>
+            <input type="number" id="value" name="value" required>
 
+            <label for="from-unit">From Unit:</label>
+            <select id="from-unit" name="from-unit">
+                <option value="meters">Meters</option>
+                <option value="kilograms">Kilograms</option>
+                <option value="liters">Liters</option>
+                <option value="celsius">Celsius</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="to-unit">To Unit:</label>
+            <select id="to-unit" name="to-unit">
+                <option value="feet">Feet</option>
+                <option value="pounds">Pounds</option>
+                <option value="gallons">Gallons</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <button type="submit">Convert</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="toolscripts.js"></script>
+</body>
+</html>
