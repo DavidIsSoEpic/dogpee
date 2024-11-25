@@ -14,7 +14,17 @@ document.getElementById('conversion-form').addEventListener('submit', function(e
         'liters_gallons': 0.264172,
         'gallons_liters': 1 / 0.264172,
         'celsius_fahrenheit': value => value * 9 / 5 + 32,
-        'fahrenheit_celsius': value => (value - 32) * 5 / 9
+        'fahrenheit_celsius': value => (value - 32) * 5 / 9,
+        'seconds_minutes': 1 / 60,
+        'minutes_seconds': 60,
+        'hours_minutes': 60,
+        'minutes_hours': 1 / 60,
+        'seconds_hours': 1 / 3600,
+        'hours_seconds': 3600,
+        'miles_kilometers': 1.60934,
+        'kilometers_miles': 1 / 1.60934,
+        'square-meters_square-feet': 10.7639,
+        'square-feet_square-meters': 1 / 10.7639
     };
 
     if (fromUnit === 'celsius' && toUnit === 'fahrenheit') {
